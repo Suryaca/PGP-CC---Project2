@@ -25,16 +25,17 @@ def sns():
     except:
         pass
     hdr = request.headers.get('X-Amz-Sns-Message-Type')
-    
+
     #Sucbscribe to SNS Topic
     if hdr== 'SubscriptionConformation' and 'SubscribeURL' in js:
         r =requests.get(js['SubscribeURL'])
-    
+        print(r)
+
     if hdr == 'Notification':
         msg_process(js['Message'],js['Timestamp'])
 
     return 'OK\n'
-        
+
 if __name__ == '__main__':
     app.run(
         host = "0.0.0.0",
