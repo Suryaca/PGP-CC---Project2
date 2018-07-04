@@ -30,7 +30,7 @@ def sns():
     if hdr== 'SubscriptionConformation' and 'SubscribeURL' in js:
         r =requests.get(js['SubscribeURL'])
 
-    return r
+    return js
 
     #if hdr == 'Notification':
     #    msg_process(js['Message'],js['Timestamp'])
