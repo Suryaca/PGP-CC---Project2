@@ -31,10 +31,10 @@ def sns():
         r =requests.get(js['SubscribeURL'])
         return SubscribeURL
 
-    if hdr == 'Notification':
-        msg_process(js['Message'],js['Timestamp'])
+    #if hdr == 'Notification':
+    #    msg_process(js['Message'],js['Timestamp'])
 
-    return 'OK\n'
+    #return 'OK\n'
 
 if __name__ == '__main__':
     app.run(
