@@ -28,6 +28,8 @@ def handle_requests():
         request_content = json.loads(request.get_data())
         sys.stdout.write(str(request_content))
 
+    return "OK"
+
 '''        # Insert newest messages to front of list
         messages.insert(0, request_content["Message"])
         return str(len(messages))
