@@ -30,30 +30,6 @@ def handle_requests():
 
     return "OK"
 
-'''        # Insert newest messages to front of list
-        messages.insert(0, request_content["Message"])
-        return str(len(messages))
-
-    if request.method == 'GET':
-        return render_template('SNS.html', message_queue=messages)'''
-'''def sns():
-    try:
-        js=json.loads(request.data)
-    except:
-        pass
-    hdr = request.headers.get('X-Amz-Sns-Message-Type')
-
-    #Sucbscribe to SNS Topic
-    if hdr== 'SubscriptionConformation' and 'SubscribeURL' in js:
-        r =requests.get(js['SubscribeURL'])
-        sys.stdout.write(r)
-        #return js
-
-    #if hdr == 'Notification':
-    #    msg_process(js['Message'],js['Timestamp'])
-
-    return 'OK\n' '''
-
 if __name__ == '__main__':
     app.run(
         host = "0.0.0.0",
