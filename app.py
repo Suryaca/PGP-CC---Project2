@@ -24,9 +24,10 @@ def handle_requests():
     global messages
 
     if request.method == 'POST':
-        sys.stdout.write("Message Recieved")
+        sys.stdout.write("Message Recieved..\n\n")
         request_content = json.loads(request.get_data())
         sys.stdout.write(str(request_content))
+        sys.stdout.write(str(requests.get_data('SubscribeURL')))
 
     return "OK"
 
