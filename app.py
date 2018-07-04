@@ -1,6 +1,7 @@
 from flask import Flask ,url_for, request,jsonify
 import json
 import requests
+import sys
 
 def msg_process(msg, tstamp):
     js = json.loads(msg)
@@ -29,7 +30,7 @@ def sns():
     #Sucbscribe to SNS Topic
     if hdr== 'SubscriptionConformation' and 'SubscribeURL' in js:
         r =requests.get(js['SubscribeURL'])
-        print(js)
+        print(js,file=sys.stdout)
         #return js
 
     #if hdr == 'Notification':
