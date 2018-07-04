@@ -27,7 +27,10 @@ def handle_requests():
         sys.stdout.write("Message Recieved..\n\n")
         request_content = json.loads(request.get_data())
         sys.stdout.write(str(request_content))
-        sys.stdout.write(str(requests.get_data('SubscribeURL')))
+    hdr = request.headers.get('X-Amz-Sns-Message-Type')
+    if hdr== 'SubscriptionConformation' and 'SubscribeURL' in js:
+        r =requests.get(js['SubscribeURL'])
+        sys.stdout.write(r)
 
     return "OK"
 
@@ -47,7 +50,7 @@ def handle_requests():
     #Sucbscribe to SNS Topic
     if hdr== 'SubscriptionConformation' and 'SubscribeURL' in js:
         r =requests.get(js['SubscribeURL'])
-        print(r,sys.stderr)
+        sys.stdout.write(r)
         #return js
 
     #if hdr == 'Notification':
