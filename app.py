@@ -29,8 +29,8 @@ def sns():
     #Sucbscribe to SNS Topic
     if hdr== 'SubscriptionConformation' and 'SubscribeURL' in js:
         r =requests.get(js['SubscribeURL'])
-
-    return js
+        print(js)
+        #return js
 
     #if hdr == 'Notification':
     #    msg_process(js['Message'],js['Timestamp'])
