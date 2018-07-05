@@ -23,10 +23,9 @@ def handle_requests():
         sys.stdout.write("Message Recieved")
         request_content = json.loads(request.get_data())
         sys.stdout.write(str(request_content))
-'''        message = request_content['Records'][0]['Sns']['Message']
-        parsed_message = json.loads(message)
-        sys.stdout.write(parsed_message['Records'][0]['s3']['bucket']['name'])
-'''
+        json.loads(request_content['Message'])
+        x = json.loads(request_content['Message'])
+        sys.stdout.write(x)
         return "OK"
 
 '''@app.route("/sns", methods=['GET','POST','PUT'])
