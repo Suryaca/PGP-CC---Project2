@@ -43,7 +43,7 @@ def sns():
 
     if hdr == 'Notification':
         #msg_process(js['Message'], js['Timestamp'])
-        sys.stdout.write("Notification Recieved")
+        #sys.stdout.write("Notification Recieved")
         sys.stdout.write(hdr)
 
     return 'OK\n'
