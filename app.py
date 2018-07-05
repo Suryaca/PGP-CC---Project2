@@ -46,7 +46,8 @@ def sns():
         #sys.stdout.write("Notification Recieved")
         sys.stdout.write(hdr)
 
-    return 'OK\n''''
+    return 'OK\n'
+'''
 
 if __name__ == '__main__':
     app.run(
