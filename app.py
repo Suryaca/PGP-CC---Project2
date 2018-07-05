@@ -32,15 +32,17 @@ def handle_requests():
     hdr = request.headers.get_data('X-Amz-Sns-Message-Type')
 
     if hdr == 'SubscriptionConfirmation' and 'SubscribeURL' in js:
-        r = requests.get_data(js['SubscribeURL'])
+        r = request.get_data(js['SubscribeURL'])
         sys.stdout.write("SubscriptionConfirmation Received..")
         sys.stdout.write(str(r))
 
     else
         sys.stdout.write(str("Notification Received..\n"))
+        r=request.get_data
         #msg_process()
-        message = event[‘Records’][0][‘Sns’][‘Message’]
-        print(“From SNS: “ + message)
+        '''msg = event[‘Records’][0][‘Sns’][‘Message’]
+        sys.stdout.write()
+        print(“From SNS: “ + ms)'''
 
     return "OK"
 
