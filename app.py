@@ -32,6 +32,7 @@ def handle_requests():
     if hdr== 'SubscriptionConformation' and 'SubscribeURL' in js:
         r =requests.get_data(js['SubscribeURL'])
         sys.stdout.write("\n\n SubscribeURL" + str(r))
+
         #sys.stdout.write(r)
 
     hdr = request.headers.get_data('X-Amz-Sns-Message-Type')
