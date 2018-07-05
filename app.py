@@ -26,6 +26,28 @@ def handle_requests():
 
     return "OK"
 
+@app.route("/sns", methods=['GET','POST','PUT'])
+def sns():
+
+    try:
+        js = json.loads(request.data)
+    except:
+        pass
+
+    hdr = request.headers.get('X-Amz-Sns-Message-Type')
+    # subscribe to the SNS topic
+    if hdr == 'SubscriptionConfirmation' and 'SubscribeURL' in js:
+        r = requests.get(js['SubscribeURL'])
+        sys.stdout.write("Message Recieved")
+        sys.stdout.write(str(r))
+
+    if hdr == 'Notification':
+        #msg_process(js['Message'], js['Timestamp'])
+        sys.stdout.write("Notification Recieved")
+        sys.stdout.write(str(hdr))
+
+    return 'OK\n'
+
 if __name__ == '__main__':
     app.run(
         host = "0.0.0.0",
