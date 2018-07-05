@@ -16,9 +16,9 @@ def processInvoice():
 @app.route("/sns-subscribe", methods=['GET','POST','PUT'])
 def handle_requests():
     global messages
-    request_content = json.loads(request.get_data())
+    '''request_content = json.loads(request.get_data())
     sys.stdout.write(str(request_content))
-
+'''
     if request.method == 'POST':
         sys.stdout.write("Message Recieved")
         request_content = json.loads(request.get_data())
@@ -44,7 +44,7 @@ def sns():
     if hdr == 'Notification':
         #msg_process(js['Message'], js['Timestamp'])
         sys.stdout.write("Notification Recieved")
-        sys.stdout.write(str(hdr))
+        sys.stdout.write(hdr)
 
     return 'OK\n'
 
