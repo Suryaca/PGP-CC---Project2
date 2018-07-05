@@ -20,12 +20,13 @@ def handle_requests():
     sys.stdout.write(str(request_content))
 '''
     if request.method == 'POST':
-        sys.stdout.write("Message Recieved")
+        sys.stdout.write("\n\n\Message Recieved\n\n")
         request_content = json.loads(request.get_data())
-        #sys.stdout.write(str(request_content))
+        sys.stdout.write(str(request_content))
         json.loads(request_content['Message'])
         x = json.loads(request_content['Message'])
-        sys.stdout.write(str(x))
+        sys.stdout.write("\n\n\Notification Recieved\n\n")
+        sys.stdout.write(x)
         return "OK"
 
 '''@app.route("/sns", methods=['GET','POST','PUT'])
