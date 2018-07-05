@@ -23,6 +23,9 @@ def handle_requests():
         sys.stdout.write("Message Recieved")
         request_content = json.loads(request.get_data())
         sys.stdout.write(str(request_content))
+        msg=json.loads(request_content['Message'])
+        sys.stdout.write("\n\nMessage\n\n")
+        sys.stdout.write(msg)
 
     return "OK"
 
