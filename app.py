@@ -29,7 +29,8 @@ def handle_requests():
         x = json.loads(request_content['Message'])
         sys.stdout.write("\n\n Notification Recieved\n\n")
         sys.stdout.write(str(x))
-        return "OK"
+
+    return "OK"
 
 '''@app.route("/sns", methods=['GET','POST','PUT'])
 def sns():
