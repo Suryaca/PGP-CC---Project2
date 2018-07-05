@@ -2,7 +2,9 @@ from flask import Flask ,url_for, request,jsonify
 import json
 import requests
 import sys
+import pandas
 import txt2csv
+
 
 app = Flask(__name__)
 
@@ -29,7 +31,7 @@ def handle_requests():
 
 @app.route("/sns", methods=['GET','POST','PUT'])
 def sns():
-    
+
     try:
         js = json.loads(request.data)
     except:
