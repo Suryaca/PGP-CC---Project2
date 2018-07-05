@@ -6,9 +6,9 @@ import sys
 def msg_process(msg, tstamp):
     js = json.loads(msg)
     sys.stdout.write(str(js))
-    msg = 'Region: {0} / Alarm: {1}'.format(
-        js['Region'], js['AlarmName']
-    )
+    message = event[‘Records’][0][‘Sns’][‘Message’]
+    print(“From SNS: “ + message)
+    return message
 
 app = Flask(__name__)
 
@@ -36,9 +36,11 @@ def handle_requests():
         sys.stdout.write("SubscriptionConfirmation Received..")
         sys.stdout.write(str(r))
 
-    if hdr == 'Notification':
+    else
         sys.stdout.write(str("Notification Received..\n"))
-        msg_process(js['Message'], js['Timestamp'])
+        #msg_process()
+        message = event[‘Records’][0][‘Sns’][‘Message’]
+        print(“From SNS: “ + message)
 
     return "OK"
 
