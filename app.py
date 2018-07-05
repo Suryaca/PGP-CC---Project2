@@ -3,12 +3,6 @@ import json
 import requests
 import sys
 
-'''def msg_process(msg, tstamp):
-    js = json.loads(msg)
-    sys.stdout.write(str(js))
-    message = event[‘Records’][0][‘Sns’][‘Message’]
-    print(“From SNS: “ + message)
-    return message'''
 
 app = Flask(__name__)
 
