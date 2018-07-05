@@ -36,7 +36,7 @@ def handle_requests():
         sys.stdout.write("SubscriptionConfirmation Received..")
         sys.stdout.write(str(r))
 
-    else
+    else:
         sys.stdout.write(str("Notification Received..\n"))
         r=request.get_data
         #msg_process()
