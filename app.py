@@ -27,7 +27,7 @@ def handle_requests():
         #sys.stdout.write(str(request_content[s3][object]))
         x = json.loads(request_content('Message'))
         sys.stdout.write("\n\n Notification Recieved\n\n")
-        sys.stdout.write(x['Records'][0]['s3']['bucket']['name'])
+        sys.stdout.write(str(x['Records'][0]['s3']['bucket']['name']))
 
     return "OK"
 
