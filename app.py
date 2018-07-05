@@ -17,6 +17,7 @@ def processInvoice():
 @app.route("/sns-subscribe", methods=['GET','POST','PUT'])
 def handle_requests():
     global messages
+    sys.stdout.write(json.loads(request))
 
     if request.method == 'POST':
         sys.stdout.write("Message Recieved..\n\n")
@@ -38,11 +39,8 @@ def handle_requests():
 
     else:
         sys.stdout.write(str("Notification Received..\n"))
-        r=request.get_data
-        #msg_process()
-        '''msg = event[‘Records’][0][‘Sns’][‘Message’]
-        sys.stdout.write()
-        print(“From SNS: “ + ms)'''
+        r=request.get_data()
+        sys.stdout.write(r)
 
     return "OK"
 
