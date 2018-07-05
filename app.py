@@ -23,37 +23,10 @@ def handle_requests():
         sys.stdout.write("\nMessage start.. \n")
         request_content = json.loads(request.get_data())
         sys.stdout.write(str(request_content))
-        #json.loads(request_content['Message'])
         sys.stdout.write("\n\n Mesage End..\n\n")
-        #sys.stdout.write(str(request_content[s3][object]))
-        #x = json.loads(request_content('Message'))
-        #sys.stdout.write("\n\n Notification Recieved\n\n")
-        #sys.stdout.write(str(x))
+        # Strange with out this print stament half Message is printed on terminal
 
     return "OK"
-
-'''@app.route("/sns", methods=['GET','POST','PUT'])
-def sns():
-
-    try:
-        js = json.loads(request.data)
-    except:
-        pass
-
-    hdr = request.headers.get('X-Amz-Sns-Message-Type')
-    # subscribe to the SNS topic
-    if hdr == 'SubscriptionConfirmation' and 'SubscribeURL' in js:
-        r = requests.get(js['SubscribeURL'])
-        sys.stdout.write("Message Recieved")
-        sys.stdout.write(str(r))
-
-    if hdr == 'Notification':
-        #msg_process(js['Message'], js['Timestamp'])
-        #sys.stdout.write("Notification Recieved")
-        sys.stdout.write(hdr)
-
-    return 'OK\n'
-'''
 
 if __name__ == '__main__':
     app.run(
