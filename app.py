@@ -28,6 +28,8 @@ def handle_requests():
     return "OK"
 
 @app.route("/sns", methods=['GET','POST','PUT'])
+def sns():
+    
     try:
         js = json.loads(request.data)
     except:
