@@ -2,9 +2,6 @@ from flask import Flask ,url_for, request,jsonify
 import json
 import requests
 import sys
-import pandas
-import txt2csv
-
 
 app = Flask(__name__)
 
