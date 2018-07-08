@@ -2,6 +2,12 @@ from flask import Flask ,url_for, request,jsonify
 import json
 import requests
 import sys
+import boto3
+import botocore
+
+NON_PROCESSED_INV_BUCKET= '' # replace with your bucket name
+PROCESSED_INV_BUCKET =
+KEY = 'docproc-invoice.txt' # replace with your object key
 
 app = Flask(__name__)
 
@@ -27,6 +33,12 @@ def handle_requests():
         # Strange with out this print stament half Message is printed on terminal
 
     return "OK"
+
+@app.route("/download")
+def download():
+
+@app.route("/upload")
+def: upload():
 
 if __name__ == '__main__':
     app.run(
